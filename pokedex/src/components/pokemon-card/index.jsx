@@ -10,14 +10,14 @@ export default function PokemonCard({ pokemonName, pokemonImagem, pokemonTypes})
     const pokemonTypeHandler = () => {
         if (pokemonTypes[1]){
             return (pokemonTypes[0].type.name.charAt(0).toUpperCase() + pokemonTypes[0].type.name.slice(1)) + "/" + (pokemonTypes[1].type.name.charAt(0).toUpperCase() + pokemonTypes[1].type.name.slice(1));
-        } return pokemonTypes[0].type.name;
+        } return pokemonTypes[0].type.name.charAt(0).toUpperCase() + pokemonTypes[0].type.name.slice(1);
     }
 
   return (
     <Card sx={{ maxWidth: 345 }}>
       <CardMedia
         component="img"
-        sx={{ height: 300 }}
+        // sx={{ height: 300 }}
         image={pokemonImagem}
         title="pokemon image"
       />
