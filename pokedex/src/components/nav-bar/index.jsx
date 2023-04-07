@@ -57,7 +57,7 @@ export default function Navbar({ searchPokemon }) {
         <Toolbar >
             <Box component="img" src="assets/pokeball.png" height="2.4em"/>
           <Typography variant="h5" noWrap component="div" sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' }}}>
-            Shiny Pokédex
+            Pokédex
           </Typography>
           <Search onChange= {(e) => searchPokemon(e.target.value)}>
             <SearchIconWrapper>

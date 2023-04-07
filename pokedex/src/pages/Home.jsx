@@ -15,7 +15,7 @@ export const Home = () => {
 
   const getPokemonData = () => {
     var endpoints = [];
-    for (var i = 1; i < 500; i++) {
+    for (var i = 1; i < 980; i++) {
       endpoints.push(`https://pokeapi.co/api/v2/pokemon/${i}/`);
     }
 
@@ -45,7 +45,7 @@ export const Home = () => {
   };
 
   return (
-    <div style={{backgroundColor: "#3b3a3a", paddingBottom:"2em", height:"20%"}}>
+    <div style={{backgroundColor: "#b3b2b2", paddingBottom:"2em", height:"20%"}}>
       <Navbar searchPokemon={searchPokemon} />
       <Container maxWidth="false">
         <Grid container spacing={2.4}>
@@ -53,11 +53,12 @@ export const Home = () => {
             <Skeletons />
           ) : (
             pokemonData.map((pokemon, key) => (
-              <Grid item xs={6} sm={4} md={2.4} key={pokemon.data.species.url}>
+              <Grid item xs={6} sm={4} md={2} key={pokemon.data.species.url}>
                 <PokemonCard
                   pokemonName={pokemon.data.name}
                   pokemonImagem={pokemon.data.sprites.front_default}
                   pokemonTypes={pokemon.data.types}
+                  pokemonId = {pokemon.data.id}
                 />
               </Grid>
             ))
