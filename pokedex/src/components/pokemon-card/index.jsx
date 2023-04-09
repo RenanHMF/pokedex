@@ -22,8 +22,18 @@ export default function PokemonCard({
     return (
         <Box style={{ display: "flex", justifyContent: "space-between", width:"100%", alignItems:"center"}}>
           <div style={{ display: "flex", gap:"0.2em"}}>
-            <CardMedia component="img" title="pokemon type" image={`assets/pokemonTypes/${pokemonTypes[0].type.name}.png`} sx={{ height: 30 }}/>  
-            <CardMedia component="img" title="pokemon type" image={`assets/pokemonTypes/${pokemonTypes[1].type.name}.png`} sx={{ height: 30 }}/>  
+            <CardMedia 
+              component="img" 
+              title={pokemonTypes[0].type.name.charAt(0).toUpperCase() + pokemonTypes[0].type.name.slice(1)} 
+              image={`assets/pokemonTypes/${pokemonTypes[0].type.name}.png`} 
+              sx={{ height: 30 }}
+            />  
+            <CardMedia 
+              component="img" 
+              title={pokemonTypes[1].type.name.charAt(0).toUpperCase() + pokemonTypes[1].type.name.slice(1)} 
+              image={`assets/pokemonTypes/${pokemonTypes[1].type.name}.png`} 
+              sx={{ height: 30 }}
+            />  
           </div>
           <p>
             {"#"+("0000"+pokemonId).slice(-4)}
@@ -32,7 +42,7 @@ export default function PokemonCard({
     );} return (
       <Box style={{ display: "flex", justifyContent: "space-between", width:"100%", alignItems:"center"}}>
       <div style={{ display: "flex", gap:"0.2em"}}>
-        <CardMedia component="img" title="pokemon type" image={`assets/pokemonTypes/${pokemonTypes[0].type.name}.png`} sx={{ height: 30 }}/>  
+        <CardMedia component="img" title={pokemonTypes[0].type.name.charAt(0).toUpperCase() + pokemonTypes[0].type.name.slice(1)} image={`assets/pokemonTypes/${pokemonTypes[0].type.name}.png`} sx={{ height: 30 }}/>  
       </div>
       <p>
         {"#"+("0000"+pokemonId).slice(-4)}
@@ -47,7 +57,7 @@ export default function PokemonCard({
         component="img"
         sx = {{backgroundColor:"#f2f2f2"}}
         image={pokemonImagem}
-        title="pokemon image"
+        title={pokemonName.charAt(0).toUpperCase() + pokemonName.slice(1)}
       />
       <CardContent sx = {{backgroundColor:"#fff"}}>
         <CardContent sx={{display: "flex",}}>
